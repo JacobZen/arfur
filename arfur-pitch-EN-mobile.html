@@ -144,97 +144,148 @@
             body { overflow-y: auto; overflow-x: hidden; }
             
             .slide {
-                padding: 2.5rem 1.5rem 4rem;
+                padding: 2rem 1.2rem 4rem;
                 overflow-y: auto;
                 -webkit-overflow-scrolling: touch;
                 justify-content: flex-start;
-                padding-top: 3rem;
+                padding-top: 2.5rem;
+                max-width: 100vw;
             }
             
             /* Title slide centering */
-            .slide:first-child { justify-content: center; padding-top: 2rem; }
+            .slide:first-child { 
+                justify-content: center; 
+                padding-top: 1.5rem;
+                text-align: center;
+            }
             
-            .slide-title { font-size: 1.5rem; letter-spacing: 1px; margin-bottom: 0.3rem; }
-            .slide-subtitle { font-size: 1.05rem; margin-bottom: 1.5rem; }
+            /* ── ARFUR title slide sizing ── */
+            .slide h1[style*="font-size:7.5rem"] { font-size: 3rem !important; }
+            .slide h1[style*="font-size:5.5rem"] { font-size: 2.5rem !important; }
             
+            /* Tagline under ARFUR - must be small enough to not wrap ugly */
+            .slide .emotional-text[style*="font-size:2.2rem"] { font-size: 1.15rem !important; }
+            
+            /* Subtitle "THE CULTURAL HERITAGE PLATFORM" */
+            .slide p[style*="letter-spacing:3px"] { 
+                font-size: 0.7rem !important; 
+                letter-spacing: 2px !important; 
+            }
+            
+            /* Location text top-left */
+            .slide div[style*="margin-bottom:auto"] { font-size: 0.75rem !important; }
+            
+            .slide-title { font-size: 1.4rem; letter-spacing: 1px; margin-bottom: 0.2rem; }
+            .slide-subtitle { font-size: 0.95rem; margin-bottom: 1.2rem; }
+            
+            /* ── All grids to single column ── */
             .grid-2, .grid-3, .grid-4 {
                 grid-template-columns: 1fr !important;
-                gap: 1rem;
+                gap: 0.8rem;
             }
             
-            .card { padding: 1.2rem; border-radius: 12px; }
+            .card { padding: 1rem; border-radius: 10px; }
             
-            .stat-num { font-size: 1.8rem; }
-            .stat-label { font-size: 0.72rem; }
+            /* ── Stat numbers ── */
+            .stat-num { font-size: 1.6rem; }
+            .stat-label { font-size: 0.7rem; }
             
+            /* Stats row — 3 across on mobile */
+            div[style*="display:flex"][style*="gap:3rem"] { 
+                gap: 1rem !important; 
+                justify-content: space-around !important;
+            }
+            
+            /* ── Emotional text scaling ── */
             .emotional-text { line-height: 1.3 !important; }
             
-            /* Scale down big emotional text */
-            .slide .emotional-text[style*="font-size:2.8rem"],
-            .slide .emotional-text[style*="font-size:2.6rem"],
-            .slide .emotional-text[style*="font-size:2.4rem"],
-            .slide .emotional-text[style*="font-size:2.2rem"] {
-                font-size: 1.5rem !important;
-            }
-            .slide .emotional-text[style*="font-size:1.8rem"],
-            .slide .emotional-text[style*="font-size:1.6rem"],
+            .slide .emotional-text[style*="font-size:2.8rem"] { font-size: 1.3rem !important; }
+            .slide .emotional-text[style*="font-size:2.6rem"] { font-size: 1.2rem !important; }
+            .slide .emotional-text[style*="font-size:2.4rem"] { font-size: 1.15rem !important; }
+            
+            .slide .emotional-text[style*="font-size:1.8rem"] { font-size: 1.05rem !important; }
+            .slide .emotional-text[style*="font-size:1.6rem"] { font-size: 1rem !important; }
             .slide .emotional-text[style*="font-size:1.5rem"],
-            .slide .emotional-text[style*="font-size:1.4rem"] {
-                font-size: 1.15rem !important;
+            .slide .emotional-text[style*="font-size:1.4rem"] { font-size: 0.95rem !important; }
+            .slide .emotional-text[style*="font-size:1.2rem"] { font-size: 0.9rem !important; }
+            
+            /* ── Body text scaling ── */
+            .slide p[style*="font-size:1.1rem"],
+            .slide p[style*="font-size:1rem"] { font-size: 0.85rem !important; }
+            .slide p[style*="font-size:0.95rem"] { font-size: 0.82rem !important; }
+            .slide p[style*="font-size:0.92rem"] { font-size: 0.8rem !important; }
+            .slide p[style*="font-size:0.9rem"] { font-size: 0.78rem !important; }
+            
+            /* ── Headings ── */
+            .slide h3[style*="font-size:1.8rem"] { font-size: 1.2rem !important; }
+            .slide h3[style*="font-size:1.1rem"],
+            .slide h3[style*="font-size:1.05rem"] { font-size: 0.9rem !important; }
+            .slide h4[style*="font-size:1rem"],
+            .slide h4[style*="font-size:0.95rem"] { font-size: 0.85rem !important; }
+            
+            /* ── Lists ── */
+            ul li { font-size: 0.8rem; margin-bottom: 0.4rem; padding-left: 1.1rem; line-height: 1.4; }
+            ul li::before { font-size: 1.1rem; }
+            
+            /* ── Table — horizontal scroll ── */
+            .card:has(table) { padding: 0.8rem; overflow-x: auto; }
+            table { font-size: 0.68rem; min-width: 480px; }
+            th, td { padding: 0.35rem 0.45rem; font-size: 0.68rem; }
+            
+            /* ── Bar chart — stack vertical ── */
+            .bar-chart { 
+                flex-direction: column; 
+                height: auto !important; 
+                border-radius: 8px; 
+                gap: 2px;
+            }
+            .bar { 
+                width: 100% !important; 
+                min-height: 26px; 
+                font-size: 0.65rem !important; 
+                border-radius: 6px; 
             }
             
-            /* Title slide ARFUR text */
-            .slide h1[style*="font-size:7.5rem"] { font-size: 3.5rem !important; }
-            .slide h1[style*="font-size:5.5rem"] { font-size: 3rem !important; }
-            .slide p[style*="font-size:2.2rem"] { font-size: 1.3rem !important; }
+            /* ── Tags ── */
+            .tag { font-size: 0.65rem; padding: 2px 6px; margin: 2px; }
             
-            ul li { font-size: 0.85rem; margin-bottom: 0.5rem; padding-left: 1.2rem; }
-            ul li::before { font-size: 1.2rem; }
-            
-            /* Table scroll */
-            table { font-size: 0.72rem; display: block; overflow-x: auto; white-space: nowrap; }
-            th, td { padding: 0.4rem 0.5rem; font-size: 0.72rem; }
-            
-            /* Bar chart stacks nicely */
-            .bar-chart { flex-wrap: wrap; height: auto !important; border-radius: 8px; }
-            .bar { min-height: 24px; font-size: 0.62rem !important; border-radius: 4px; margin: 1px; }
-            
-            .tag { font-size: 0.68rem; padding: 3px 7px; margin: 2px; }
-            
-            /* Footer & nav */
-            footer { left: 1.5rem; right: 1.5rem; bottom: 0.8rem; font-size: 0.62rem; }
-            #dot-nav { right: 0.4rem; gap: 6px; }
-            .dot { width: 5px; height: 5px; }
+            /* ── Footer & nav ── */
+            footer { left: 1.2rem; right: 1.2rem; bottom: 0.6rem; font-size: 0.6rem; }
+            #dot-nav { right: 0.3rem; gap: 5px; }
+            .dot { width: 4px; height: 4px; }
             #nav-left, #nav-right { display: none; }
             
-            /* Stats row should wrap */
-            div[style*="display:flex"][style*="gap:3rem"] { gap: 1.5rem !important; }
-            div[style*="display:flex"][style*="gap:2rem"] { gap: 1rem !important; }
-            
-            /* Vision bottom row cards */
+            /* ── Vision/Universe small cards row — 2 per row ── */
             div[style*="display:flex"][style*="flex-wrap:wrap"] > .card[style*="min-width:150px"],
             div[style*="display:flex"][style*="flex-wrap:wrap"] > .card[style*="min-width:110px"] {
-                min-width: 45% !important;
-                flex: 1 1 45% !important;
+                min-width: 44% !important;
+                flex: 1 1 44% !important;
+                padding: 0.7rem !important;
+            }
+            div[style*="display:flex"][style*="flex-wrap:wrap"] > .card h4 { font-size: 0.72rem !important; }
+            div[style*="display:flex"][style*="flex-wrap:wrap"] > .card p[style*="font-size:0.72rem"],
+            div[style*="display:flex"][style*="flex-wrap:wrap"] > .card p[style*="font-size:0.7rem"] { 
+                font-size: 0.62rem !important; 
             }
             
-            /* QR code section */
-            div[style*="width:100px;height:100px"] { width: 80px !important; height: 80px !important; }
+            /* ── QR code ── */
+            div[style*="width:100px;height:100px"] { width: 70px !important; height: 70px !important; padding: 8px !important; }
             
-            /* Inline styles that need override */
-            .slide p[style*="font-size:1.1rem"],
-            .slide p[style*="font-size:1.0rem"],
-            .slide p[style*="font-size:1rem"] { font-size: 0.88rem !important; }
+            /* ── Giving back numbers ── */
+            div[style*="font-size:2.2rem"][style*="font-weight:800"] { font-size: 1.6rem !important; }
             
-            .slide h3[style*="font-size:1.8rem"] { font-size: 1.4rem !important; }
-            .slide h3[style*="font-size:1.1rem"] { font-size: 0.95rem !important; }
+            /* ── Prevent any horizontal overflow ── */
+            * { max-width: 100%; }
+            svg { max-width: 100%; height: auto; }
         }
         
         @media (max-width: 400px) {
-            .slide { padding: 2rem 1rem 3.5rem; }
-            .slide-title { font-size: 1.3rem; }
-            .slide h1[style*="font-size:7.5rem"] { font-size: 2.8rem !important; }
-            .stat-num { font-size: 1.5rem; }
+            .slide { padding: 1.5rem 1rem 3.5rem; }
+            .slide-title { font-size: 1.2rem; }
+            .slide h1[style*="font-size:7.5rem"] { font-size: 2.5rem !important; }
+            .slide h1[style*="font-size:5.5rem"] { font-size: 2rem !important; }
+            .slide .emotional-text[style*="font-size:2.2rem"] { font-size: 1rem !important; }
+            .stat-num { font-size: 1.3rem; }
             
             div[style*="display:flex"][style*="flex-wrap:wrap"] > .card[style*="min-width"] {
                 min-width: 100% !important;
@@ -265,8 +316,8 @@
             <div style="text-align:left;margin-bottom:auto;color:var(--text-faint);font-size:0.85rem;">Fredrikstad, Norway — February 2026</div>
             <div style="text-align:center;margin:auto;">
                 <h1 style="font-size:7.5rem;line-height:1;margin-bottom:1rem;background:linear-gradient(135deg,var(--text-main) 30%,var(--gold-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">ARFUR</h1>
-                <p class="emotional-text" style="font-size:2.2rem;color:var(--gold);font-style:italic;">Every child deserves to know where they come from.</p>
-                <p style="margin-top:1.2rem;color:var(--text-faint);letter-spacing:3px;text-transform:uppercase;font-size:0.85rem;">AI-Powered Cultural Heritage for a New Generation</p>
+                <p class="emotional-text" style="font-size:2.2rem;color:var(--gold);font-style:italic;">Everyone deserves to know where they come from.</p>
+                <p style="margin-top:1.2rem;color:var(--text-faint);letter-spacing:3px;text-transform:uppercase;font-size:0.85rem;">The Cultural Heritage Platform</p>
             </div>
         </div>
 
@@ -277,7 +328,7 @@
                     "Mamma, why don't I know any stories from where you grew up?"
                 </p>
                 <p style="font-size:1.1rem;color:var(--text-dim);line-height:1.8;margin-bottom:2.5rem;">
-                    304 million people live outside their birth country. Their children grow up between two worlds — often losing the stories, languages, and wisdom that make them who they are. Not because parents don't care. Because there's nothing built for them.
+                    304 million people live outside their birth country. Families, communities, and entire generations lose the stories, languages, and traditions that define who they are. Not because they don't care — because there's nothing built to help them.
                 </p>
                 <div style="display:flex;gap:3rem;justify-content:center;flex-wrap:wrap;">
                     <div style="text-align:center;">
@@ -328,25 +379,25 @@
         <!-- 4: THE SOLUTION -->
         <div class="slide">
             <h2 class="slide-title">The Solution</h2>
-            <p class="slide-subtitle">Screen time with meaning — powered by AI, guided by heart</p>
+            <p class="slide-subtitle">Cultural heritage made accessible — at scale</p>
             <div class="grid-2">
                 <div class="card">
-                    <h3 class="text-gold" style="margin-bottom:1.2rem;font-size:1.1rem;">What Children Experience</h3>
+                    <h3 class="text-gold" style="margin-bottom:1.2rem;font-size:1.1rem;">The Platform</h3>
                     <ul>
-                        <li><strong>Beautiful 3D storybooks</strong> with interactive page-turn animations</li>
-                        <li><strong>AI-powered narration</strong> in 25+ native languages — warm and natural</li>
+                        <li><strong>Interactive stories</strong> with 3D visuals and page-turn animations</li>
+                        <li><strong>Narration in 25+ languages</strong> — native speakers and AI voices</li>
                         <li><strong>Cultural quizzes & vocabulary</strong> woven into every story</li>
-                        <li><strong>Age-appropriate</strong> for 4–6, 7–9, and 10–12 year olds</li>
+                        <li><strong>Multi-audience:</strong> children (4–12), families, schools, libraries, integration</li>
                         <li><strong>Offline mode</strong> — works anywhere, even without internet</li>
                     </ul>
                 </div>
                 <div style="display:flex;flex-direction:column;justify-content:center;">
                     <p class="emotional-text" style="font-size:1.8rem;color:var(--gold-light);margin-bottom:1.5rem;line-height:1.3;">
-                        "A child's birthright — their own stories, in their own language."
+                        Stories, languages, and traditions — preserved and accessible for everyone.
                     </p>
-                    <p style="margin-bottom:1.5rem;font-size:0.95rem;">Not a language drill. Not a passive audiobook. An experience that makes children proud of where they come from.</p>
+                    <p style="margin-bottom:1.5rem;font-size:0.95rem;">Not a language drill. Not a passive audiobook. An experience that connects people to where they come from — whether they're 6 or 60.</p>
                     <div class="card" style="padding:1.2rem 1.5rem;border-color:rgba(200,146,58,0.15);background:var(--gold-subtle);">
-                        <p style="font-size:0.9rem;color:var(--text-dim);"><strong style="color:var(--gold-light);">Our AI Promise:</strong> AI for scale, humans for soul. Every story reviewed by cultural experts and our child psychologist co-founder. Zero ads. Zero dark patterns. GDPR from day one.</p>
+                        <p style="font-size:0.9rem;color:var(--text-dim);">Every story is reviewed by cultural experts and our child psychologist co-founder. Zero ads. Zero dark patterns. GDPR-compliant from day one. AI accelerates production — humans ensure quality.</p>
                     </div>
                 </div>
             </div>
@@ -354,11 +405,11 @@
 
         <!-- 5: FILIPINO TALES -->
         <div class="slide">
-            <h2 class="slide-title">Filipino Tales</h2>
-            <p class="slide-subtitle">Production-ready proof of execution</p>
+            <h2 class="slide-title">Proof of Execution</h2>
+            <p class="slide-subtitle">Filipino Tales — our first product, production-ready</p>
             <div class="grid-2">
                 <div>
-                    <h3 class="text-gold" style="margin-bottom:1rem;font-size:1.1rem;">What's Already Built</h3>
+                    <h3 class="text-gold" style="margin-bottom:1rem;font-size:1.1rem;">The Platform Works</h3>
                     <ul>
                         <li><strong>50+</strong> authentic folktales — QA-verified with cultural notes</li>
                         <li><strong>25+</strong> languages — Tagalog, Cebuano, Ilocano, Norwegian, English…</li>
@@ -370,8 +421,8 @@
                 </div>
                 <div style="display:flex;flex-direction:column;gap:1.2rem;">
                     <div class="card" style="text-align:center;">
-                        <p class="emotional-text" style="font-size:1.6rem;color:var(--gold-light);line-height:1.3;margin-bottom:0.8rem;">Born from lived experience.</p>
-                        <p class="text-dim" style="font-size:0.88rem;">Created by a multicultural family that has lived and traveled across the world — building the product they wished existed for their own children.</p>
+                        <p class="emotional-text" style="font-size:1.6rem;color:var(--gold-light);line-height:1.3;margin-bottom:0.8rem;">Built from lived experience.</p>
+                        <p class="text-dim" style="font-size:0.88rem;">Filipino Tales proves the model. The same platform engine powers every culture we launch next — Nordic, Latin, African, Asian. Content changes, technology stays.</p>
                     </div>
                     <div class="card">
                         <p style="font-size:0.82rem;color:var(--text-faint);margin-bottom:0.6rem;text-transform:uppercase;letter-spacing:1px;">Production Stack</p>
@@ -421,29 +472,29 @@
             </div>
         </div>
 
-        <!-- 7: THE VISION — Tales Universe Beyond the App -->
+        <!-- 7: THE VISION — Beyond the App -->
         <div class="slide">
             <h2 class="slide-title">The Vision</h2>
-            <p class="slide-subtitle">Tales isn't an app. It's a universe.</p>
+            <p class="slide-subtitle">Arfur is a platform — not a single product.</p>
             <div style="max-width:1000px;margin:0 auto;">
                 <p class="emotional-text" style="font-size:1.4rem;color:var(--gold-light);text-align:center;margin-bottom:2rem;line-height:1.4;">
-                    Every tale we create can become an animated video, a YouTube series, a podcast, a bedtime playlist — reaching children everywhere their parents already are.
+                    Every culture we add multiplies across every channel — interactive stories, video, audio, education, publishing, and licensing.
                 </p>
                 <div class="grid-3" style="margin-bottom:1.5rem;">
                     <div class="card" style="text-align:center;">
                         <p style="font-size:1.8rem;margin-bottom:0.6rem;">🎬</p>
-                        <h4 class="text-gold" style="margin-bottom:0.4rem;font-size:0.95rem;">Animated Stories</h4>
-                        <p style="font-size:0.82rem;color:var(--text-dim);">AI-generated animated videos from every tale. YouTube, TikTok, Instagram — cultural stories that compete for attention.</p>
+                        <h4 class="text-gold" style="margin-bottom:0.4rem;font-size:0.95rem;">Animated Video</h4>
+                        <p style="font-size:0.82rem;color:var(--text-dim);">AI-generated animated content for YouTube, TikTok, Instagram. Cultural stories that compete for attention and drive traffic.</p>
                     </div>
                     <div class="card" style="text-align:center;">
                         <p style="font-size:1.8rem;margin-bottom:0.6rem;">📺</p>
-                        <h4 class="text-gold" style="margin-bottom:0.4rem;font-size:0.95rem;">Tales TV</h4>
-                        <p style="font-size:0.82rem;color:var(--text-dim);">Streaming series of animated heritage stories. NRK Super, international OTT platforms. The first culturally authentic animated universe.</p>
+                        <h4 class="text-gold" style="margin-bottom:0.4rem;font-size:0.95rem;">Streaming & TV</h4>
+                        <p style="font-size:0.82rem;color:var(--text-dim);">Animated heritage series for NRK Super, international OTT platforms. Culturally authentic content for broadcasters.</p>
                     </div>
                     <div class="card" style="text-align:center;">
                         <p style="font-size:1.8rem;margin-bottom:0.6rem;">🎧</p>
-                        <h4 class="text-gold" style="margin-bottom:0.4rem;font-size:0.95rem;">Tales Audio</h4>
-                        <p style="font-size:0.82rem;color:var(--text-dim);">Bedtime story podcasts & Spotify playlists in native languages. AI narration makes 25+ language production affordable.</p>
+                        <h4 class="text-gold" style="margin-bottom:0.4rem;font-size:0.95rem;">Audio & Podcasts</h4>
+                        <p style="font-size:0.82rem;color:var(--text-dim);">Story podcasts and Spotify playlists in native languages. Affordable multi-language production through AI narration.</p>
                     </div>
                 </div>
                 <div style="display:flex;gap:1rem;flex-wrap:wrap;">
@@ -465,7 +516,7 @@
                     </div>
                 </div>
                 <p style="text-align:center;margin-top:1.5rem;color:var(--gold);font-size:0.9rem;font-weight:500;">
-                    One story engine → infinite distribution. Every culture multiplies every channel.
+                    One content engine → multiple products × every culture. The platform grows in two dimensions.
                 </p>
             </div>
         </div>
@@ -746,10 +797,10 @@
             </div>
         </div>
 
-        <!-- 15: TALES UNIVERSE — Cultures -->
+        <!-- 15: PLATFORM EXPANSION — Cultures -->
         <div class="slide">
-            <h2 class="slide-title">The Tales Universe</h2>
-            <p class="slide-subtitle">One platform. Every culture. Every generation.</p>
+            <h2 class="slide-title">Platform Expansion</h2>
+            <p class="slide-subtitle">One platform. Every culture. Multiple products.</p>
             <div class="grid-3" style="margin-bottom:1.5rem;">
                 <div class="card" style="border-color:rgba(200,146,58,0.15);text-align:center;">
                     <p style="font-size:0.68rem;color:var(--gold);text-transform:uppercase;letter-spacing:2px;margin-bottom:0.5rem;">Phase 1 — Active</p>
@@ -798,20 +849,20 @@
         <!-- 16: WHO WE ARE -->
         <div class="slide">
             <h2 class="slide-title">Who We Are</h2>
-            <p class="slide-subtitle">This is not just a business — it is a cultural movement.</p>
+            <p class="slide-subtitle">A multicultural team building from lived experience.</p>
             <div class="grid-2" style="align-items:start;">
                 <div>
                     <p class="emotional-text" style="font-size:2.4rem;color:var(--gold);margin-bottom:0.5rem;line-height:1.2;">
-                        "We don't just build for diaspora families. We ARE a diaspora family."
+                        "We build for diaspora communities because we are one."
                     </p>
                     <div style="margin-top:2rem;">
                         <div class="card" style="margin-bottom:1rem;">
                             <h3 class="text-gold" style="margin-bottom:0.4rem;font-size:1rem;">Founder — Platform & Vision</h3>
-                            <p class="text-dim" style="font-size:0.88rem;">Multicultural family that has lived and traveled across the world — building the product they wished existed for their own children. Extensive background in web development and design.</p>
+                            <p class="text-dim" style="font-size:0.88rem;">Multicultural family with international experience across multiple countries. Extensive background in web development and design. Building the platform from personal conviction.</p>
                         </div>
                         <div class="card">
                             <h3 class="text-hi" style="margin-bottom:0.4rem;font-size:1rem;">Co-Founder — Pedagogy & Psychology</h3>
-                            <p class="text-dim" style="font-size:0.88rem;">Specialist child psychologist with international experience. Clinical and pedagogical depth behind every story, quiz, and interaction. The science behind the stories.</p>
+                            <p class="text-dim" style="font-size:0.88rem;">Specialist child psychologist with international experience. Ensures pedagogical depth and age-appropriateness across all content and interactions.</p>
                         </div>
                         <p style="margin-top:1rem;color:var(--text-faint);font-size:0.82rem;">Advisory Board sought: EdTech scaling · B2G/public sector · Community reach · Media & publishing</p>
                     </div>
@@ -888,8 +939,8 @@
         <!-- 18: CLOSING -->
         <div class="slide" style="text-align:center;">
             <h1 style="font-size:5.5rem;margin-bottom:1.5rem;background:linear-gradient(135deg,var(--text-main) 30%,var(--gold-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;">ARFUR</h1>
-            <p class="emotional-text" style="font-size:2.6rem;color:var(--gold);margin-bottom:0.8rem;line-height:1.2;">"Every child deserves to know<br>where they come from."</p>
-            <p class="emotional-text" style="font-size:1.6rem;color:var(--text-dim);font-style:italic;margin-bottom:2.5rem;">Stories are how cultures survive.</p>
+            <p class="emotional-text" style="font-size:2.6rem;color:var(--gold);margin-bottom:0.8rem;line-height:1.2;">"Everyone deserves to know<br>where they come from."</p>
+            <p class="emotional-text" style="font-size:1.6rem;color:var(--text-dim);font-style:italic;margin-bottom:2.5rem;">Cultural heritage, made accessible.</p>
 
             <div style="display:flex;justify-content:center;margin-bottom:2rem;">
                 <div style="display:inline-block;padding:1.2rem;background:rgba(255,255,255,0.04);border:1px solid var(--card-border);border-radius:16px;">
