@@ -76,7 +76,19 @@
   src: url(fonts/font10.woff2) format('woff2');
 }
 
-</style>
+
+        /* ── MOBILE PERFORMANCE ── */
+        @media (max-width: 768px) {
+            .ambient-glow { display: none !important; }
+            .card { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+            .slide { 
+                transition: opacity 0.25s ease !important;
+                transform: none !important;
+                will-change: opacity;
+            }
+            .slide.active { transform: none !important; }
+        }
+    </style>
     <style>
         :root {
             --bg-dark: #08080f;
@@ -208,6 +220,18 @@
 
         .stat-num { font-size: 2.5rem; font-weight: 800; color: var(--gold); line-height: 1; }
         .stat-label { font-size: 0.82rem; color: var(--text-dim); margin-top: 0.3rem; }
+    
+        /* ── MOBILE PERFORMANCE ── */
+        @media (max-width: 768px) {
+            .ambient-glow { display: none !important; }
+            .card { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+            .slide { 
+                transition: opacity 0.25s ease !important;
+                transform: none !important;
+                will-change: opacity;
+            }
+            .slide.active { transform: none !important; }
+        }
     </style>
 </head>
 <body>
